@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Mtest.Models.Tbl_Details>
+
+@{
+    ViewBag.Title = "Customer Form";
+}
+
+<h2>Customer Form</h2>
+
+<p>
+    @*@Html.ActionLink("Add New", "Add")*@
+    <a class="btn btn-success" style="margin-bottom:10px" onclick=@Html.ActionLink("Add New", "Add")<i class="fa fa-plus"></i></a>
+</p>
+
+<div class="col-sm-6">
+    <div class="dataTables_length" id="CustomerTable_length"><label>Show 
+    <select name="CustomerTable_length" aria-controls="CustomerTable" class="form-control input-sm">
+    <option value="10">10</option>
+    <option value="25">25</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    </select> entries</label>
+     </div></div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { TempID = item.TempID }) |
+                @Html.ActionLink("Delete", "Delete", new { TempID = item.TempID })
+            </td>
+        </tr>
+    }
+        <div id="employeeTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="CustomerTable" class="table table-striped table-bordered dataTable no-footer" style="width: 100%;" role="grid" aria-describedby="CustomerTable_info"></table>
+                </div>
+            </div>
+
+            <div class="col-sm-5">
+                <div class="dataTables_info" id="CustomerTable_info" role="status" aria-live="polite">
+                    Showing 0 to 0 of 0 entries
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="CustomerTable_paginate">
+                    <ul class="pagination">
+                        <li class="paginate_button previous disabled" id="CustomerTable_previous">
+                            <a href="#" aria-controls="CustomerTable" data-dt-idx="0" tabindex="0">Previous</a>
+                        </li>
+                        <li class="paginate_button next disabled" id="CustomerTable_next"><a href="#" aria-controls="CustomerTable" data-dt-idx="1" tabindex="0">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+    
+</table>
+

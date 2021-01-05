@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="nimapModelStoreContainer" CdmEntityContainer="nimapEntities">
+    <EntitySetMapping Name="Tbl_Details">
+      <EntityTypeMapping TypeName="nimapModel.Tbl_Details">
+        <MappingFragment StoreEntitySet="Tbl_Details">
+          <ScalarProperty Name="TempID" ColumnName="TempID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
